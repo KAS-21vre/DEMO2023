@@ -1,0 +1,19 @@
+﻿<Window x:Class="Ykrasheniya.Menedger.WindowPerexod"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ykrasheniya.Menedger"
+        mc:Ignorable="d"
+        Title="WindowPerexod" Height="450" Width="800">
+    <Grid Background="#FFFFF2CC">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button x:Name="btProsmProduct" Content="Просмотреть товары" Height="40" Width="160" Margin="10" Click="btProsmProduct_Click" Foreground="#FFFDFDFD" Background="#FFC45911"/>
+            <Button x:Name="btAddZayavka" Content="Оформить заявку" Height="40" Width="160" Margin="10" Foreground="White" Background="#FFC45911"/>
+            <Button x:Name="btSpisokZayavok" Content="Список заявок" Height="40" Width="160" Margin="10" Foreground="White" Background="#FFC45911"/>
+
+        </StackPanel>
+        
+
+    </Grid>
+</Window>

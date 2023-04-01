@@ -1,0 +1,28 @@
+﻿<Window x:Class="Ykrasheniya.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ykrasheniya"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Background="#FFFFF2CC">
+        <Image Width="90" Height="90" HorizontalAlignment="left" Source="/Sourse/logo.png" VerticalAlignment="Top"/>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Авторизация" FontSize="30" HorizontalAlignment="Center"/>
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <TextBlock Text="Логин" Width="60" Height="20" FontSize="15"/>
+                <TextBox x:Name="tbLogin" Width="150" Height="20"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <TextBlock Text="Пароль" Width="60" Height="20" FontSize="15"/>
+                <PasswordBox x:Name="pbPassword" Width="150" Height="20"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="btRegistration" Width="100" Height="30" Content="Регистрация" HorizontalAlignment="Left" Margin="5" Click="btRegistration_Click" Foreground="White" Background="#FFC45911"/>
+                <Button x:Name="btEnter" Width="100" Height="30" Content="Войти" HorizontalAlignment="Right" Margin="5" Click="btEnter_Click" Foreground="White" Background="#FFC45911"/>
+            </StackPanel>
+            <Button Content="Зайти как гость" Background="{x:Null}" BorderBrush="{x:Null}" Click="Button_Click"  />
+        </StackPanel>
+    </Grid>
+</Window>

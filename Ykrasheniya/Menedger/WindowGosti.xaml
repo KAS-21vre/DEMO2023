@@ -1,0 +1,29 @@
+﻿<Window x:Class="Ykrasheniya.Menedger.WindowGosti"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ykrasheniya"
+        mc:Ignorable="d"
+        Title="WindowGosti" Height="450" Width="800">
+    <Grid>
+        <ListView   x:Name="ListProduct" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal"  >
+                        <Image  Height="150" Width="150" x:Name="imgIcon" Source="/Sourse/picture.png"/>
+                        <StackPanel Orientation="Vertical" Width="350" Height="150" Margin="10">
+                            <TextBlock  Margin="5" Text="{Binding Path=Наименование, StringFormat='Наименование: {0}'}"/>
+                            <TextBlock Text="{Binding Path=Описание, StringFormat='Описание: {0}'}"  Margin="5"/>
+                            <TextBlock x:Name="tbProizvoditel" Text="{Binding Path=Производитель, StringFormat='Производитель: {0}'}" Margin="5"/>
+                            <TextBlock Text="{Binding Path=Стоимость, StringFormat='Цена: {0}'}" Margin="5"/>
+                        </StackPanel>
+                        <StackPanel >
+                            <TextBlock Text="{Binding Path=Действующая_скидка, StringFormat='Действующая_скидка: {0}%'}" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Height="150" />
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Window>

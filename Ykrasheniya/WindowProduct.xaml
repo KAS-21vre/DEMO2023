@@ -1,0 +1,47 @@
+﻿<Window x:Class="Ykrasheniya.Menedger.WindowProduct"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ykrasheniya"
+        mc:Ignorable="d"
+        Title="WindowProduct" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal">
+            <Button x:Name="btAdd" Content="Добавить" Width="100" Height="30" Margin="5" Click="btAdd_Click" Background="#FFC45911" Foreground="White"/>
+            <Button x:Name="btDelete" Content="Удалить" Width="100" Height="30" Margin="5" Background="#FFC45911" Foreground="White"/>
+            <Button x:Name="btRedact" Content="Редактировать" Width="100" Height="30" Margin="5" Click="btRedact_Click" Background="#FFC45911" Foreground="White"/>
+        </StackPanel>
+
+        <ListView  Grid.Row="1"  x:Name="ListProduct" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal"  >
+                        <Image  Height="150" Width="150" x:Name="imgIcon" Source="/Sourse/picture.png"/>
+                        <StackPanel Orientation="Vertical" Width="350" Height="150" Margin="10">
+                            <TextBlock  Margin="5" Text="{Binding Path=Наименование, StringFormat='Наименование: {0}'}"/>
+                            <TextBlock Text="{Binding Path=Описание, StringFormat='Описание: {0}'}"  Margin="5"/>
+                            <TextBlock x:Name="tbProizvoditel" Text="{Binding Производитель.Наименование, StringFormat='Производитель: {0}'}" Margin="5"/>
+                            <TextBlock Text="{Binding Path=Стоимость, StringFormat='Цена: {0}'}" Margin="5"/>
+                        </StackPanel>
+                        <StackPanel >
+                            <TextBlock Text="{Binding Path=Действующая_скидка, StringFormat='Действующая_скидка: {0}%'}" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Height="150" />
+                        </StackPanel>
+                        <StackPanel.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="Редактировать" x:Name="edit_menu_btn" Click="edit_menu_btn_Click"/>
+                                <MenuItem Header="Удалить" x:Name="delete_menu_btn" Click="delete_menu_btn_Click"/>
+                            </ContextMenu>
+                        </StackPanel.ContextMenu>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+    </Grid>
+</Window>
